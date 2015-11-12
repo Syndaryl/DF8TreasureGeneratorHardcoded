@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Syndaryl.Collections;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 
 namespace Syndaryl.TreasureGenerator
@@ -62,6 +65,32 @@ namespace Syndaryl.TreasureGenerator
             }
 
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Converts a df8 library into a dictionary.
+        /// </summary>
+        /// <param name="library">The library containing all the categories.</param>
+        /// <returns>A Dictionary of WeightedList of df8CategoryItem</returns>
+        private Dictionary<string, WeightedList<df8CategoryItem>> LoadTables(df8 library)
+        {
+            var categories = new Dictionary<string, WeightedList<df8CategoryItem>>();
+            foreach (var category in library.category)
+            {
+                categories.Add(category.name, new WeightedList<df8CategoryItem>());
+                foreach (var randomItem in category.item)
+                {
+                    int itemWeight = 1;
+                    var choiceIndex = randomItem.ItemsElementName.ToList().FindIndex(x => x == ItemsChoiceType.RandomWeight);
+                    if (choiceIndex > -1)
+                    {
+                        itemWeight = Convert.ToInt16(randomItem.Items[choiceIndex]);
+                    }
+                    categories[category.name].Add(randomItem, itemWeight);
+                }
+                categories[category.name].DoWeightCumulation();
+            }
+            return categories;
         }
     }
 

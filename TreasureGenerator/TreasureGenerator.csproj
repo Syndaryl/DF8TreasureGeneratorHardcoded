@@ -55,6 +55,12 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeightedList\Syndaryl.Collections.WeightedList.csproj">
+      <Project>{bc239192-9091-4f74-8ade-6200b662c07e}</Project>
+      <Name>Syndaryl.Collections.WeightedList</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
