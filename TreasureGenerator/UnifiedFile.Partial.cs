@@ -1,6 +1,6 @@
 ﻿
 
-namespace Syndaryl.RandomTreasure
+namespace Syndaryl.TreasureGenerator
 {
     using System;
     using System.Collections.Generic;
@@ -24,6 +24,7 @@ namespace Syndaryl.RandomTreasure
 
             return myObject;
         }
+
     }
     public partial class df8CategoryItem : IComparable, ICloneable
     {
@@ -151,7 +152,7 @@ namespace Syndaryl.RandomTreasure
             {
                 result.Items = (object[])this.Items.Clone();
             }
-            result.ItemsElementName = (Syndaryl.RandomTreasure.ItemsChoiceType[])this.ItemsElementName.Clone();
+            result.ItemsElementName = (Syndaryl.TreasureGenerator.ItemsChoiceType[])this.ItemsElementName.Clone();
 
             return result;
         }

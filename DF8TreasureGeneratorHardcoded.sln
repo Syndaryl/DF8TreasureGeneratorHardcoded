@@ -5,7 +5,9 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreasureGenerator", "TreasureGenerator\TreasureGenerator.csproj", "{F62D9A25-4A54-48F0-A52A-9E97B61A6A1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syndaryl.Collections.WeightedList", "..\SelfEducation\WeightedList\Syndaryl.Collections.WeightedList.csproj", "{BC239192-9091-4F74-8ADE-6200B662C07E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCircuits.ExpressionEvaluator", "..\SoftCircuits\SoftCircuits.ExpressionEvaluator\SoftCircuits.ExpressionEvaluator.csproj", "{544B2A66-85B2-411A-9169-44439416DD51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syndaryl.Collections.WeightedList", "WeightedList\Syndaryl.Collections.WeightedList.csproj", "{BC239192-9091-4F74-8ADE-6200B662C07E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{F62D9A25-4A54-48F0-A52A-9E97B61A6A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F62D9A25-4A54-48F0-A52A-9E97B61A6A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F62D9A25-4A54-48F0-A52A-9E97B61A6A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544B2A66-85B2-411A-9169-44439416DD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544B2A66-85B2-411A-9169-44439416DD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544B2A66-85B2-411A-9169-44439416DD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544B2A66-85B2-411A-9169-44439416DD51}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC239192-9091-4F74-8ADE-6200B662C07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC239192-9091-4F74-8ADE-6200B662C07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC239192-9091-4F74-8ADE-6200B662C07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
