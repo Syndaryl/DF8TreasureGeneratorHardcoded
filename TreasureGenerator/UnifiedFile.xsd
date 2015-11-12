@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="df8">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="category">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="item">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:choice maxOccurs="unbounded">
+                      <xs:element name="Description" type="xs:string" />
+                      <xs:element name="UnitPrice" type="xs:decimal" />
+                      <xs:element name="Unit" type="xs:string" />
+                      <xs:element name="Cost" type="xs:string" />
+                      <xs:element name="Weight" type="xs:decimal" />
+                      <xs:element maxOccurs="unbounded" name="Attribute">
+                        <xs:complexType>
+                          <xs:attribute name="name" type="xs:string"/>
+                          <xs:attribute name="value" type="xs:string" use="required" />
+                          <xs:attribute name="operation" type="xs:string"/>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="TehKey" type="xs:unsignedShort" />
+                      <xs:element name="CF" type="xs:decimal" />
+                      <xs:element name="RandomWeight" type="xs:decimal" />
+                      <xs:element name="WF" type="xs:byte" />
+                      <xs:element name="Reroll">
+                        <xs:complexType>
+                          <xs:attribute name="category" type="xs:string" use="required" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="Type" type="xs:string" />
+                      <xs:element name="Reserve" type="xs:unsignedByte" />
+                      <xs:element name="ValidForAttribute" type="xs:string" />
+                      <xs:element name="motif" type="xs:string" />
+                      <xs:element name="ContainmentType" type="xs:string" />
+                      <xs:element name="Capacity" type="xs:decimal" />
+                    </xs:choice>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
