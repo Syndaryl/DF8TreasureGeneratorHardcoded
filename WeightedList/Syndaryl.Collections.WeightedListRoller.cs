@@ -1,7 +1,7 @@
 ﻿namespace Syndaryl.Collections
 {
     using System;
-    class WeightedListRoller<T>
+    public class WeightedListRoller<T>
     {
         private WeightedList<T> weightedList;
         private readonly Random rng;
