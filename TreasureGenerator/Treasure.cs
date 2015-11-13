@@ -1,11 +1,12 @@
-﻿using Syndaryl.Collections;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-
+﻿
 namespace Syndaryl.TreasureGenerator
 {
+    using Syndaryl.Collections;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Runtime.Serialization;
+
     internal class Treasure
     {
         string libraryName = "";
@@ -91,6 +92,18 @@ namespace Syndaryl.TreasureGenerator
                 categories[category.name].DoWeightCumulation();
             }
             return categories;
+        }
+
+        internal DF8Result RandomFromCategory(Dictionary<string, WeightedList<df8CategoryItem>> categories, string category)
+        {
+            if (!categories.ContainsKey(category))
+                return null;
+
+            var roller = new WeightedListRoller<df8CategoryItem>(categories[category]);
+            var randomItem = roller.RandomItem();
+            var resolver = new DF8Resolver();
+            var resolvedRoller = resolver.ResolveItem(randomItem);
+            return resolvedRoller;
         }
     }
 
