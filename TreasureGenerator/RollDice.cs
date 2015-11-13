@@ -18,7 +18,7 @@ namespace DiceApp
             	return -1;
             string arg = "";
 			arg = String.Concat(args);
-			RollDice myRoller = new RollDice(arg);
+			var myRoller = new RollDice(arg);
 			Console.WriteLine("{0}.", myRoller);
             return 0;
         }
@@ -35,12 +35,13 @@ namespace DiceApp
 				result = result + " + " + Convert.ToString(Rolls[x]);
 			}
 			
-			if ( ( sign != null && ! sign.Equals("") ) || offset != 0 ) {
+			if ( ( sign != null && ! sign.Equals("") ) || System.Math.Abs(offset) > Double.Epsilon) {
 				result = result + " {";
 				if ( sign != null && ! sign.Equals("") ){
 					result = result + sign;
 				}
-				if ( offset != 0 ){
+				if ( offset > Double.Epsilon || offset < -1 * Double.Epsilon)
+                {
 					result = result + Convert.ToString(offset);
 				}
 				result = result + "}";
@@ -170,7 +171,7 @@ namespace DiceApp
 			
 			pattern = @"d";
 			matcher = Regex.Match(offsetString, pattern);
-			RollDice OffsetRoll = new RollDice();
+			var OffsetRoll = new RollDice();
 			if (matcher.Success) {
 				OffsetRoll.roll_array(offsetString);
 				offset = OffsetRoll.Sum;
@@ -231,8 +232,8 @@ namespace DiceApp
 		}
 		
 		private int[] rolls;
-		
-		public int[] Rolls {
+
+        public int[] Rolls {
 			get {
 				return rolls;
 			}
