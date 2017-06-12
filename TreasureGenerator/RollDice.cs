@@ -212,8 +212,6 @@ namespace DiceApp
 				case @"/":
 					Sum /= offset;
 					break;
-				default:
-					break;
 			}
 			
 			Rolls = throws;

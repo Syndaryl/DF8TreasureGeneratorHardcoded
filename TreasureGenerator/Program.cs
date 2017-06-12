@@ -11,8 +11,20 @@ namespace Syndaryl.TreasureGenerator
         static void Main(string[] args)
         {
             var treasure = new Treasure("unifiedfile.xml");
-            var TreasureResult = treasure.Generate();
-            Console.WriteLine(TreasureResult);
+            var loop = true;
+            while (loop)
+            { 
+                var TreasureResult = treasure.Generate();
+                TreasureResult.Traverse(WriteItem);
+                var key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Escape || (key.Key == ConsoleKey.C && key.Modifiers == ConsoleModifiers.Control) )
+                    loop = false;
+            }
+        }
+
+        private static void WriteItem(DF8Result obj)
+        {
+            Console.WriteLine(obj.Item);
         }
     }
 }

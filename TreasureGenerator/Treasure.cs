@@ -49,7 +49,7 @@ namespace Syndaryl.TreasureGenerator
         /// </summary>
         /// <param name="LibraryName">File name/path of the library XML to load. Must conform to UnifiedFile.xsd so it can be deserialized.</param>
         /// <returns></returns>
-        internal object Generate(string LibraryName)
+        internal TreeRoot<DF8Result> Generate(string LibraryName)
         {
             if (!this.LibraryName.Equals(LibraryName) || Library == null)
             {
@@ -58,14 +58,14 @@ namespace Syndaryl.TreasureGenerator
             return Generate();
         }
 
-        internal object Generate()
+        internal TreeRoot<DF8Result> Generate()
         {
             if (Library == null || this.LibraryName.Equals(string.Empty))
             {
                 throw new NoLibraryException("Tried to generate a random item without a library successfully loaded!");
             }
-
-            throw new NotImplementedException();
+            return FromRootCategory(LoadTables(Library), "gems");
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -94,15 +94,16 @@ namespace Syndaryl.TreasureGenerator
             return categories;
         }
 
-        internal DF8Result RandomFromCategory(Dictionary<string, WeightedList<df8CategoryItem>> categories, string category)
+        internal TreeRoot<DF8Result> FromRootCategory(Dictionary<string, WeightedList<df8CategoryItem>> categories, string category)
         {
             if (!categories.ContainsKey(category))
                 return null;
 
             var roller = new WeightedListRoller<df8CategoryItem>(categories[category]);
             var randomItem = roller.RandomItem();
-            var resolver = new DF8Resolver();
-            var resolvedRoller = resolver.ResolveItem(randomItem);
+            var resolver = new DF8Resolver(categories);
+            var resolvedRoller = resolver.ProduceFinalItem(randomItem);
+
             return resolvedRoller;
         }
     }

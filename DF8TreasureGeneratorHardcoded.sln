@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftCircuits.ExpressionEval
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syndaryl.Collections.WeightedList", "WeightedList\Syndaryl.Collections.WeightedList.csproj", "{BC239192-9091-4F74-8ADE-6200B662C07E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syndaryl.Collections.Tree", "Syndaryl.Collections.Tree\Syndaryl.Collections.Tree.csproj", "{74669DE6-FF82-43FF-891B-28CFFC5AEC82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BC239192-9091-4F74-8ADE-6200B662C07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC239192-9091-4F74-8ADE-6200B662C07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC239192-9091-4F74-8ADE-6200B662C07E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74669DE6-FF82-43FF-891B-28CFFC5AEC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74669DE6-FF82-43FF-891B-28CFFC5AEC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74669DE6-FF82-43FF-891B-28CFFC5AEC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74669DE6-FF82-43FF-891B-28CFFC5AEC82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

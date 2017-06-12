@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F62D9A25-4A54-48F0-A52A-9E97B61A6A1E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{74669DE6-FF82-43FF-891B-28CFFC5AEC82}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TreasureGenerator</RootNamespace>
-    <AssemblyName>TreasureGenerator</AssemblyName>
+    <RootNamespace>Syndaryl.Collections</RootNamespace>
+    <AssemblyName>Syndaryl.Collections.Tree</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,16 +22,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Syndaryl.TreasureGenerator.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,36 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DF8Eval.cs" />
-    <Compile Include="DF8Modifier.cs" />
-    <Compile Include="DF8Resolver.cs" />
-    <Compile Include="DF8Result.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Tree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RollDice.cs" />
-    <Compile Include="Treasure.cs" />
-    <Compile Include="UnifiedFile.cs" />
-    <Compile Include="UnifiedFile.Partial.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="UnifiedFile.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\SoftCircuits\SoftCircuits.ExpressionEvaluator\SoftCircuits.ExpressionEvaluator.csproj">
-      <Project>{544b2a66-85b2-411a-9169-44439416dd51}</Project>
-      <Name>SoftCircuits.ExpressionEvaluator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Syndaryl.Collections.Tree\Syndaryl.Collections.Tree.csproj">
-      <Project>{74669de6-ff82-43ff-891b-28cffc5aec82}</Project>
-      <Name>Syndaryl.Collections.Tree</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WeightedList\Syndaryl.Collections.WeightedList.csproj">
-      <Project>{bc239192-9091-4f74-8ade-6200b662c07e}</Project>
-      <Name>Syndaryl.Collections.WeightedList</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
