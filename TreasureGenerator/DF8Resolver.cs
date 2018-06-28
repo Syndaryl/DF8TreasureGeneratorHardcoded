@@ -47,7 +47,7 @@ namespace Syndaryl.TreasureGenerator
             if (node.Data.UnmodifiedItem == null )
                 node.Data.UnmodifiedItem = (df8CategoryItem)node.Data.Item.Clone();
 
-            var attributes = node.Data.UnmodifiedItem.GetAttributes().Where(x => !x.operation.Equals(""));
+            var attributes = node.Data.UnmodifiedItem.GetAttributes().Where(x => x.operation != null).Where(x => !x.operation.Equals(""));
             if (attributes.Count() > 0)
             {
                 node.Data.Modifiers.AddRange(attributes);
